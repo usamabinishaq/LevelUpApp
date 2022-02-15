@@ -18,50 +18,26 @@ class Splash extends Component {
   }
   setTimeCall = () => {
     setTimeout(() => {
-      this.props.navigation.replace('GettingStarted');
+      this.props.navigation.replace('OnBoarding');
     }, 2000);
   };
   render() {
     return (
       <View style={globalStyle.mainContainer}>
         <StatusBar hidden />
-        {/* <View style={styles.topImageView}>
-          <Image
-            source={require('../../assets/images/logo.png')}
-            style={styles.topImage}
-          />
-        </View>
-        <View
-          style={{
-            flex: 0.65,
-            justifyContent: 'flex-end',
-          }}>
-          <Image
-            source={require('../../assets/images/img.png')}
-            style={styles.bottomImage}
-          />
-        </View> */}
+        <Image
+          source={require('../../assets/images/logo.png')}
+          style={styles.topImage}
+        />
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
-  topImageView: {
-    flex: 0.35,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
   topImage: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'contain',
-  },
-  bottomImage: {
-    width: '175%',
-    height: '175%',
-    top: '61%',
-    right: '50%',
-    resizeMode: 'contain',
+    width: 185.1,
+    height: 55.79,
+    resizeMode: 'cover',
   },
 });
 

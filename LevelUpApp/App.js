@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Splash from './src/screens/getStarted/Splash';
+import OnBoarding from './src/screens/getStarted/onBoarding';
 import Signup from './src/screens/auth/Signup';
 import Signin from './src/screens/auth/Signin';
 import {LogBox} from 'react-native';
@@ -13,6 +14,7 @@ LogBox.ignoreAllLogs(); //Ignore all log notifications
 
 let screens = [
   {name: 'Splash', comp: Splash},
+  {name: 'OnBoarding', comp: OnBoarding},
   {name: 'Signup', comp: Signup},
   {name: 'Signin', comp: Signin},
 ];
