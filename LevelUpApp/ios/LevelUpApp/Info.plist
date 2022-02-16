@@ -69,6 +69,12 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>nunito.ttf</string>
+		<string>nunitobold.ttf</string>
+		<string>nunitosemibold.ttf</string>
+		<string>poppinsbold.otf</string>
+		<string>poppinsmedium.otf</string>
+		<string>poppinsregular.otf</string>
 	</array>
 </dict>
 </plist>
