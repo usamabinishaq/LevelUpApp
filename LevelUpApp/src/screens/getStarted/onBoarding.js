@@ -6,9 +6,11 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
-import colors from '../../assets/color/colors';
+import colors from '../../styles/colors';
+
 let winWidth = Dimensions.get('window').width;
 let winHeight = Dimensions.get('window').height;
 class OnBoarding extends Component {
@@ -20,13 +22,12 @@ class OnBoarding extends Component {
     return (
       <View style={styles.main}>
         <ImageBackground
-          resizeMethod="scale"
-          source={require('../../assets/images/5.png')}
+          source={require('../../assets/images/5.jpg')}
           style={styles.backgroundImage}>
           <StatusBar translucent backgroundColor="transparent" />
           <View
             style={{
-              flex: 0.56,
+              flex: 0.55,
               justifyContent: 'flex-end',
             }}>
             <Image
@@ -36,9 +37,9 @@ class OnBoarding extends Component {
           </View>
           <View
             style={{
-              flex: 0.44,
+              flex: 0.45,
               alignItems: 'center',
-              justifyContent: 'flex-end',
+              justifyContent: 'center',
             }}>
             <Text
               style={{
@@ -47,9 +48,9 @@ class OnBoarding extends Component {
                 textAlign: 'center',
                 color: colors.white,
                 lineHeight: 24,
-                bottom: '12%',
+                top: '7.5%',
               }}>{`Find what workout you need and get personal trainer for you`}</Text>
-            <View
+            <TouchableOpacity
               style={{
                 width: 335,
                 height: 48,
@@ -57,7 +58,7 @@ class OnBoarding extends Component {
                 backgroundColor: colors.primary,
                 justifyContent: 'center',
                 alignItems: 'center',
-                bottom: '5%',
+                top: '10%',
               }}>
               <Text
                 style={{
@@ -69,14 +70,15 @@ class OnBoarding extends Component {
                 }}>
                 Get Started
               </Text>
-            </View>
+            </TouchableOpacity>
             <Text
               style={{
                 fontFamily: 'poppinsmedium',
                 fontSize: 14,
                 textAlign: 'center',
-                color: 'rgba(255, 255, 255, 0.7)',
+                color: 'rgba(255, 255, 255, 0.5)',
                 lineHeight: 21,
+                top: '16.5%',
               }}>
               {`Already a member?`}
               <Text
@@ -100,6 +102,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  logo: {width: 214.2, height: 64.56, resizeMode: 'contain'},
+  logo: {width: 175, height: 52.75},
 });
 export default OnBoarding;

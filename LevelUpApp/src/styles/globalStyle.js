@@ -1,10 +1,10 @@
 import {StyleSheet} from 'react-native';
-import colors from '../assets/color/colors';
+import {PRIMARY} from './colors';
 
 const globalStyle = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: colors.primary,
+    backgroundColor: PRIMARY,
     justifyContent: 'center',
     alignItems: 'center',
   },

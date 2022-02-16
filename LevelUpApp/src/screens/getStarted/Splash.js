@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import colors from '../../assets/color/colors';
+
 import globalStyle from '../../styles/globalStyle';
 
 class Splash extends Component {
