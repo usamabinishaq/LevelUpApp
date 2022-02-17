@@ -6,6 +6,7 @@ import OnBoarding from './src/screens/getStarted/onBoarding';
 import Signup from './src/screens/auth/Signup';
 import Signin from './src/screens/auth/Signin';
 import {LogBox} from 'react-native';
+import {navigationRef} from './src/navigations/RootNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,7 +21,7 @@ let screens = [
 ];
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <Stack.Navigator>
         {screens.map((screen, index) => {
           return (

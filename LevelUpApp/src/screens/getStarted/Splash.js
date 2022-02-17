@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect} from 'react';
 import {
   Dimensions,
   Image,
@@ -9,34 +9,31 @@ import {
 } from 'react-native';
 
 import globalStyle from '../../styles/globalStyle';
+import {scaleSize, verticalScale} from '../../styles/mixins';
 
-class Splash extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this.setTimeCall();
-  }
+const Splash = ({navigation}) => {
   setTimeCall = () => {
     setTimeout(() => {
-      this.props.navigation.replace('OnBoarding');
+      navigation.replace('OnBoarding');
     }, 2000);
   };
-  render() {
-    return (
-      <View style={globalStyle.mainContainer}>
-        <StatusBar hidden />
-        <Image
-          source={require('../../assets/images/logo.png')}
-          style={styles.topImage}
-        />
-      </View>
-    );
-  }
-}
+  useEffect(() => {
+    setTimeCall();
+  }, []);
+  return (
+    <View style={globalStyle.mainContainer}>
+      <StatusBar hidden />
+      <Image
+        source={require('../../assets/images/logo.png')}
+        style={styles.topImage}
+      />
+    </View>
+  );
+};
 const styles = StyleSheet.create({
   topImage: {
-    width: 185.1,
-    height: 55.79,
+    width: scaleSize(185.1),
+    height: verticalScale(55.79),
     resizeMode: 'cover',
   },
 });

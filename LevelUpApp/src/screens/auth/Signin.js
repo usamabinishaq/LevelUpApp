@@ -1,22 +1,19 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {StatusBar, Text, View} from 'react-native';
+import Button from '../../components/atoms/buttons/button';
+import {colors} from '../../styles/colors';
+import style from './style';
 
-class Signin extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    return (
-      <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <Text
-          onPress={() => this.props.navigation.navigate('GettingStarted')}
-          style={{fontSize: 18, fontWeight: 'bold'}}>
-          Signin Page Reached
-        </Text>
-      </View>
-    );
-  }
-}
+const Signin = ({navigation}) => {
+  return (
+    <View style={style.main}>
+      <StatusBar
+        translucent={false}
+        backgroundColor={colors.WHITE}
+        barStyle="dark-content"
+      />
+    </View>
+  );
+};
 
 export default Signin;
