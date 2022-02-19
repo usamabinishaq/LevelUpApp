@@ -1,14 +1,52 @@
-import React, {Component} from 'react';
-import {View} from 'react-native';
+import React, {useState} from 'react';
+import {Text, View} from 'react-native';
+import Appbar from '../../components/appbar/appbar';
+import Button from '../../components/atoms/buttons/button';
+import Input from '../../components/atoms/textInputs/input';
+import PasswordInput from '../../components/atoms/textInputs/passwordInput';
+import style from './style';
 
-class Signup extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    return <View></View>;
-  }
-}
+const Signup = ({navigation}) => {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <View style={style.main}>
+      <Appbar title={'Create Account'} />
+      <View style={style.signupBody}>
+        <View style={[style.signupContentView]}>
+          <Text style={style.signupTitle}>{`Join with us`}</Text>
+          <Text
+            style={
+              style.signupDescription
+            }>{`Create account and get early access of our best products, inspiration and many more`}</Text>
+        </View>
+        <View style={style.signupFormView}>
+          <Input name={'Email address'} placeholder={'Enter your email'} />
+          <Input name={'Your Name'} placeholder={'Enter your name'} />
+          <Input name={'Phone Number'} placeholder={'Enter your Phone'} />
+          <PasswordInput
+            name={'Password'}
+            placeholder={'Enter your password'}
+          />
+          <Text style={style.signupAgreementText}>
+            by creating an account, you agree to our’s Privacy Policy and Terms
+            of Use.
+          </Text>
+          <Button name={'Create Account'} action={'Progress'} />
+          {/* <Text style={style.bottomText}>
+            Already Have an Account?{' '}
+            <Text
+              onPress={() => {
+                navigation.navigate('Signup');
+              }}
+              style={style.bottomText2}>
+              Sign Up
+            </Text>
+          </Text> */}
+        </View>
+      </View>
+    </View>
+  );
+};
 
 export default Signup;
