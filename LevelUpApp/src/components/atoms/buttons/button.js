@@ -7,8 +7,12 @@ const Button = (props, navigation) => {
   return (
     <TouchableOpacity
       style={[globalStyle.button, props.top ? {top: props.top} : null]}
-      onPress={() => RootNavigation.navigate(props.action)}>
-      <Text style={globalStyle.font1}>{props.name}</Text>
+      onPress={() =>
+        props.action
+          ? RootNavigation.navigate(props.action)
+          : alert('Successful')
+      }>
+      <Text style={globalStyle.poppinsFont1}>{props.name}</Text>
     </TouchableOpacity>
   );
 };

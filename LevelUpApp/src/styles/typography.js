@@ -5,6 +5,7 @@ import {scaleFont} from './mixins';
 // Nunito
 export const NUNITO_REGULAR = 'nunito';
 export const NUNITO_BOLD = 'nunitobold';
+export const NUNITO_EXTRA_BOLD = 'nunitoextrabold';
 export const NUNITO_SEMI_BOLD = 'nunitosemibold';
 
 // poppins
@@ -17,12 +18,18 @@ export const FONT_WEIGHT_REGULAR = '400';
 export const FONT_WEIGHT_BOLD = '700';
 
 // FONT SIZE
-export const FONT_18 = scaleFont(18);
+export const FONT_30 = scaleFont(32);
+export const FONT_24 = scaleFont(25);
+export const FONT_22 = scaleFont(23);
+export const FONT_20 = scaleFont(21);
+export const FONT_18 = scaleFont(18.75);
 export const FONT_16 = scaleFont(16);
 export const FONT_14 = scaleFont(14);
 export const FONT_12 = scaleFont(12);
+export const FONT_11 = scaleFont(11);
 
 // LINE HEIGHT
+export const LINE_HEIGHT_36 = scaleFont(36);
 export const LINE_HEIGHT_24 = scaleFont(24);
 export const LINE_HEIGHT_20 = scaleFont(20);
 export const LINE_HEIGHT_16 = scaleFont(16);

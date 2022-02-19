@@ -7,9 +7,11 @@ import {
   Text,
   View,
 } from 'react-native';
+import {Images} from '../../services/images';
 
 import globalStyle from '../../styles/globalStyle';
-import {scaleSize, verticalScale} from '../../styles/mixins';
+import {verticalScale} from '../../styles/mixins';
+import style from './style';
 
 const Splash = ({navigation}) => {
   setTimeCall = () => {
@@ -23,19 +25,9 @@ const Splash = ({navigation}) => {
   return (
     <View style={globalStyle.mainContainer}>
       <StatusBar hidden />
-      <Image
-        source={require('../../assets/images/logo.png')}
-        style={styles.topImage}
-      />
+      <Image source={Images.Logo} style={style.topImage} />
     </View>
   );
 };
-const styles = StyleSheet.create({
-  topImage: {
-    width: scaleSize(185.1),
-    height: verticalScale(55.79),
-    resizeMode: 'cover',
-  },
-});
 
 export default Splash;
