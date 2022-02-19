@@ -83,12 +83,13 @@ const style = StyleSheet.create({
   },
   bottomText: [globalStyle.nunitoFont3, {color: colors.BLUE}],
   bottomText2: {color: colors.BLACK, fontFamily: NUNITO_BOLD},
-  signupBody: {flex: 0.975, padding: '5%'},
+  signupBody: {flex: 0.95, padding: '5%'},
   signupContentView: {
     flex: 0.2,
     justifyContent: 'center',
     alignItems: 'flex-start',
     padding: 2.5,
+    paddingBottom: 0,
   },
   signupTitle: [
     globalStyle.poppinsFont1,
@@ -100,7 +101,7 @@ const style = StyleSheet.create({
   ],
   signupDescription: [
     globalStyle.poppinsFont6,
-    {color: colors.LightBlue, width: '90%', paddingTop: '2.5%'},
+    {color: colors.LightBlue, width: '100%', paddingTop: '2.5%'},
   ],
   signupFormView: {flex: 0.8},
   signupAgreementText: [
@@ -113,5 +114,20 @@ const style = StyleSheet.create({
       alignSelf: 'center',
     },
   ],
+  otpForm: {
+    flex: 0.8,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  otpHeading: [globalStyle.poppinsFont4, {color: colors.lightDark}],
+  otpIsCorrect: {
+    height: scaleSize(67),
+    width: scaleSize(67),
+    borderRadius: scaleSize(67 / 2),
+    borderColor: colors.BLUE,
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 export default style;

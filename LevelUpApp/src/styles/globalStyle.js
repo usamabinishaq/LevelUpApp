@@ -35,6 +35,14 @@ const globalStyle = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  roundedButton: {
+    width: scaleSize(335),
+    height: verticalScale(48),
+    borderRadius: verticalScale(48 / 2),
+    backgroundColor: colors.PRIMARY,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   socialButton: {
     width: scaleSize(335),
     height: verticalScale(48),
@@ -63,7 +71,7 @@ const globalStyle = StyleSheet.create({
   },
   poppinsFont3: {
     fontFamily: POPPINS_REGULAR,
-    fontSize: FONT_14,
+    fontSize: FONT_16,
     textAlign: 'center',
     lineHeight: LINE_HEIGHT_24,
   },

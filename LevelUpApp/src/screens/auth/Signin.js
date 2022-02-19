@@ -17,6 +17,7 @@ const Signin = ({navigation}) => {
     <View style={style.main}>
       <StatusBar
         translucent={false}
+        hidden={false}
         backgroundColor={colors.WHITE}
         barStyle="dark-content"
       />
