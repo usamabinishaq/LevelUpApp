@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
-import {StatusBar, Text, View} from 'react-native';
+import {Image, StatusBar, Text, View} from 'react-native';
+import {Images} from '../../services/images';
 import {colors} from '../../styles/colors';
+import globalStyle from '../../styles/globalStyle';
 import BackButton from '../atoms/buttons/backButton';
 import style from '../atoms/style';
 
@@ -13,7 +15,14 @@ const Appbar = (props, navigation) => {
         barStyle="dark-content"
       />
       <BackButton />
-      <Text style={style.appbarTitle}>{props.title}</Text>
+      {props.name ? (
+        <View style={style.imgContainer}>
+          <Image source={Images.Logo2} style={[globalStyle.logo]} />
+          <Image source={Images.profile} style={style.profile} />
+        </View>
+      ) : (
+        <Text style={style.appbarTitle}>{props.title}</Text>
+      )}
     </View>
   );
 };

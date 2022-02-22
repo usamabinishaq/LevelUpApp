@@ -14,7 +14,7 @@ import globalStyle from '../../styles/globalStyle';
 import {scaleSize} from '../../styles/mixins';
 import style from './style';
 
-const Progress = ({navigation}) => {
+const Progress = ({navigation, route}) => {
   setTimeCall = () => {
     setTimeout(() => {
       navigation.replace('OTP');
@@ -32,7 +32,7 @@ const Progress = ({navigation}) => {
         <View style={style.progressView}>
           <Image source={Images.running} style={style.loadingImage} />
         </View>
-        <Text style={style.progressTitle}>Sending Request...</Text>
+        <Text style={style.progressTitle}>{route.params.message}</Text>
       </ImageBackground>
     </View>
   );

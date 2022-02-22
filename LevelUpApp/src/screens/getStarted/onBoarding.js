@@ -1,3 +1,4 @@
+import {useFocusEffect} from '@react-navigation/native';
 import React from 'react';
 import {
   Image,
@@ -15,13 +16,18 @@ import {scaleSize} from '../../styles/mixins';
 import style from './style';
 
 const OnBoarding = ({navigation}) => {
+  useFocusEffect(() => {
+    // This will run when component is `focused` or mounted.
+    StatusBar.setHidden(true);
+
+    // This will run when component is `blured` or unmounted.
+  });
   return (
     <View style={styles.main}>
       <ImageBackground
         source={Images.GetStartedBackground}
         style={style.backgroundImage}
         resizeMode="cover">
-        <StatusBar hidden />
         <View style={style.topView}>
           <Image source={Images.TransparentLogo} style={style.logo} />
         </View>

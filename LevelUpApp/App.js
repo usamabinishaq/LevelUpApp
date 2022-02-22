@@ -9,6 +9,12 @@ import {LogBox} from 'react-native';
 import {navigationRef} from './src/navigations/RootNavigation';
 import OTP from './src/screens/auth/OTP';
 import Progress from './src/screens/getStarted/progress';
+import Services from './src/screens/pages/services';
+import BottomTabs from './src/screens/bottomNavigation/bottomNavigation';
+import Home from './src/screens/bottomNavigation/bottomTabs/home/home';
+import Search from './src/screens/bottomNavigation/bottomTabs/search/search';
+import Chart from './src/screens/bottomNavigation/bottomTabs/chart/chart';
+import Message from './src/screens/bottomNavigation/bottomTabs/message/message';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +28,12 @@ let screens = [
   {name: 'Signin', comp: Signin},
   {name: 'OTP', comp: OTP},
   {name: 'Progress', comp: Progress},
+  {name: 'Services', comp: Services},
+  {name: 'BottomTabs', comp: BottomTabs},
+  {name: 'Home', comp: Home},
+  {name: 'Search', comp: Search},
+  {name: 'Chart', comp: Chart},
+  {name: 'Message', comp: Message},
 ];
 const App = () => {
   return (

@@ -42,7 +42,7 @@ const style = StyleSheet.create({
     backgroundColor: colors.PRIMARY,
   },
   appbar: {
-    flex: 0.025,
+    flex: 0.05,
     padding: '5%',
     flexDirection: 'row',
     alignItems: 'center',
@@ -50,5 +50,34 @@ const style = StyleSheet.create({
     borderColor: colors.GRAY_LIGHT,
   },
   appbarTitle: [globalStyle.poppinsFont2, {color: colors.BLACK, flex: 1}],
+  profile: {
+    width: verticalScale(33),
+    height: verticalScale(33),
+    borderRadius: verticalScale(33 / 2),
+  },
+  imgContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flex: 0.9,
+  },
+  otpInputView: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '2.5%',
+    marginBottom: '15%',
+  },
+  otpInput: [
+    globalStyle.poppinsFont3,
+    {
+      flex: 0.25,
+      borderBottomWidth: 1,
+      textAlign: 'center',
+      color: colors.BLACK,
+      borderColor: 'rgba(5, 36, 48,0.2)',
+      margin: '1.25%',
+    },
+  ],
 });
 export default style;

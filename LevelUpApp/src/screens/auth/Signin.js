@@ -7,6 +7,7 @@ import Input from '../../components/atoms/textInputs/input';
 import PasswordInput from '../../components/atoms/textInputs/passwordInput';
 import {Images} from '../../services/images';
 import {colors} from '../../styles/colors';
+import globalStyle from '../../styles/globalStyle';
 import {NUNITO_BOLD} from '../../styles/typography';
 import style from './style';
 
@@ -17,11 +18,12 @@ const Signin = ({navigation}) => {
     <View style={style.main}>
       <StatusBar
         translucent={false}
+        hidden={false}
         backgroundColor={colors.WHITE}
         barStyle="dark-content"
       />
       <View style={style.topImageView}>
-        <Image source={Images.Logo2} style={style.logo} />
+        <Image source={Images.Logo2} style={globalStyle.logo} />
       </View>
       <View style={style.contentView}>
         <Text style={style.welcomeText}>{`Welcome Back !`}</Text>
@@ -47,14 +49,9 @@ const Signin = ({navigation}) => {
           </View>
           <Text style={style.forgetText}>Forgot password?</Text>
         </View>
-        <Button name={'Sign In'} />
-        <View style={style.orView}>
-          <Text style={style.orText}>Or</Text>
-        </View>
       </View>
       <View style={style.socialButtonsView}>
-        <SocialButton name={'Continue with Google'} image={Images.google} />
-        <SocialButton name={'Continue with Facebook'} image={Images.facebook} />
+        <Button name={'Sign In'} />
         <Text style={style.bottomText}>
           Don’t Have an Account?{' '}
           <Text

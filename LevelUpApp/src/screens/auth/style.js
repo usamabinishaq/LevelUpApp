@@ -16,18 +16,14 @@ const style = StyleSheet.create({
     backgroundColor: colors.WHITE,
   },
   topImageView: {
-    flex: 0.05,
+    flex: 0.1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: '5%',
   },
-  logo: {
-    width: '100%',
-    height: verticalScale(36.86),
-    resizeMode: 'contain',
-  },
+
   contentView: {
-    flex: 0.15,
+    flex: 0.2,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -37,12 +33,12 @@ const style = StyleSheet.create({
     {
       color: colors.LightBlue,
       letterSpacing: scaleSize(1.25),
-      width: '58%',
+      width: '75%',
       paddingTop: '2.5%',
     },
   ],
   formView: {
-    flex: 0.52,
+    flex: 0.5,
     padding: '5%',
   },
   forgetView: {
@@ -76,19 +72,20 @@ const style = StyleSheet.create({
     },
   ],
   socialButtonsView: {
-    flex: 0.28,
-    paddingTop: '5%',
-    justifyContent: 'center',
+    flex: 0.2,
+    padding: '2.5%',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
   bottomText: [globalStyle.nunitoFont3, {color: colors.BLUE}],
   bottomText2: {color: colors.BLACK, fontFamily: NUNITO_BOLD},
-  signupBody: {flex: 0.975, padding: '5%'},
+  signupBody: {flex: 0.95, padding: '5%'},
   signupContentView: {
-    flex: 0.2,
-    justifyContent: 'center',
+    flex: 0.175,
+    justifyContent: 'flex-start',
     alignItems: 'flex-start',
     padding: 2.5,
+    paddingBottom: 0,
   },
   signupTitle: [
     globalStyle.poppinsFont1,
@@ -100,9 +97,9 @@ const style = StyleSheet.create({
   ],
   signupDescription: [
     globalStyle.poppinsFont6,
-    {color: colors.LightBlue, width: '90%', paddingTop: '2.5%'},
+    {color: colors.LightBlue, width: '100%', paddingTop: '2.5%'},
   ],
-  signupFormView: {flex: 0.8},
+  signupFormView: {flex: 0.825},
   signupAgreementText: [
     globalStyle.poppinsFont3,
     {
@@ -113,5 +110,20 @@ const style = StyleSheet.create({
       alignSelf: 'center',
     },
   ],
+  otpForm: {
+    flex: 0.825,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  otpHeading: [globalStyle.poppinsFont4, {color: colors.lightDark}],
+  otpIsCorrect: {
+    height: scaleSize(67),
+    width: scaleSize(67),
+    borderRadius: scaleSize(67 / 2),
+    borderColor: colors.BLUE,
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 export default style;
