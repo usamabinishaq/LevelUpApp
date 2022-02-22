@@ -31,7 +31,7 @@ const OTP = (props, navigation) => {
           <View style={style.otpIsCorrect}>
             <Icon name={'check-bold'} color={colors.BLUE} size={20} />
           </View>
-          <RoundedButton name={'Verify'} top={'15%'} />
+          <RoundedButton name={'Verify'} top={'15%'} action={'Services'} />
         </View>
       </View>
     </View>

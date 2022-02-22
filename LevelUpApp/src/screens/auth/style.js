@@ -85,8 +85,8 @@ const style = StyleSheet.create({
   bottomText2: {color: colors.BLACK, fontFamily: NUNITO_BOLD},
   signupBody: {flex: 0.95, padding: '5%'},
   signupContentView: {
-    flex: 0.2,
-    justifyContent: 'center',
+    flex: 0.175,
+    justifyContent: 'flex-start',
     alignItems: 'flex-start',
     padding: 2.5,
     paddingBottom: 0,
@@ -103,7 +103,7 @@ const style = StyleSheet.create({
     globalStyle.poppinsFont6,
     {color: colors.LightBlue, width: '100%', paddingTop: '2.5%'},
   ],
-  signupFormView: {flex: 0.8},
+  signupFormView: {flex: 0.825},
   signupAgreementText: [
     globalStyle.poppinsFont3,
     {
@@ -115,7 +115,7 @@ const style = StyleSheet.create({
     },
   ],
   otpForm: {
-    flex: 0.8,
+    flex: 0.825,
     justifyContent: 'center',
     alignItems: 'center',
   },

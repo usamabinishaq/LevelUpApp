@@ -9,6 +9,7 @@ import {LogBox} from 'react-native';
 import {navigationRef} from './src/navigations/RootNavigation';
 import OTP from './src/screens/auth/OTP';
 import Progress from './src/screens/getStarted/progress';
+import Services from './src/screens/pages/services';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ let screens = [
   {name: 'Signin', comp: Signin},
   {name: 'OTP', comp: OTP},
   {name: 'Progress', comp: Progress},
+  {name: 'Services', comp: Services},
 ];
 const App = () => {
   return (
