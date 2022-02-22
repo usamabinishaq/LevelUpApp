@@ -21,7 +21,7 @@ export const FONT_WEIGHT_BOLD = '700';
 export const FONT_30 = scaleFont(32);
 export const FONT_24 = scaleFont(25);
 export const FONT_22 = scaleFont(23);
-export const FONT_20 = scaleFont(21);
+export const FONT_20 = scaleFont(23.5);
 export const FONT_18 = scaleFont(18.5);
 export const FONT_16 = scaleFont(16);
 export const FONT_14 = scaleFont(14);
@@ -30,6 +30,7 @@ export const FONT_11 = scaleFont(11);
 
 // LINE HEIGHT
 export const LINE_HEIGHT_36 = scaleFont(36);
+export const LINE_HEIGHT_30 = scaleFont(30);
 export const LINE_HEIGHT_24 = scaleFont(24);
 export const LINE_HEIGHT_20 = scaleFont(20);
 export const LINE_HEIGHT_16 = scaleFont(16);

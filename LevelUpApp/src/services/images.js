@@ -7,4 +7,18 @@ export const Images = {
   google: require('../assets/images/google.png'),
   facebook: require('../assets/images/facebook.jpg'),
   running: require('../assets/images/running.png'),
+  profile: require('../assets/images/6.jpg'),
+};
+
+export const TabIcons = {
+  home: require('../assets/images/home.png'),
+  search: require('../assets/images/search.png'),
+  chart: require('../assets/images/chart.png'),
+  message: require('../assets/images/message.png'),
+};
+export const SelectedTabIcons = {
+  home: require('../assets/images/home_white.png'),
+  search: require('../assets/images/search_white.png'),
+  chart: require('../assets/images/chart_white.png'),
+  message: require('../assets/images/message_white.png'),
 };

@@ -38,7 +38,11 @@ const Signup = ({navigation}) => {
             by creating an account, you agree to our’s Privacy Policy and Terms
             of Use.
           </Text>
-          <Button name={'Create Account'} action={'Progress'} />
+          <Button
+            name={'Create Account'}
+            action={'Progress'}
+            message={'Sending Request...'}
+          />
           {/* <Text style={style.bottomText}>
             Already Have an Account?{' '}
             <Text

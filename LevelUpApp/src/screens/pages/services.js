@@ -75,7 +75,11 @@ const Services = (props, navigation) => {
           </TouchableOpacity>
         </View>
         <View style={style.button}>
-          <Button name={'Continue'} />
+          <Button
+            name={'Continue'}
+            action={'BottomTabs'}
+            message={'Selecting best workouts for you…'}
+          />
         </View>
       </View>
     </View>

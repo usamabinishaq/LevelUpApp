@@ -16,18 +16,14 @@ const style = StyleSheet.create({
     backgroundColor: colors.WHITE,
   },
   topImageView: {
-    flex: 0.05,
+    flex: 0.1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: '5%',
   },
-  logo: {
-    width: '100%',
-    height: verticalScale(36.86),
-    resizeMode: 'contain',
-  },
+
   contentView: {
-    flex: 0.15,
+    flex: 0.2,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -37,12 +33,12 @@ const style = StyleSheet.create({
     {
       color: colors.LightBlue,
       letterSpacing: scaleSize(1.25),
-      width: '58%',
+      width: '75%',
       paddingTop: '2.5%',
     },
   ],
   formView: {
-    flex: 0.52,
+    flex: 0.5,
     padding: '5%',
   },
   forgetView: {
@@ -76,9 +72,9 @@ const style = StyleSheet.create({
     },
   ],
   socialButtonsView: {
-    flex: 0.28,
-    paddingTop: '5%',
-    justifyContent: 'center',
+    flex: 0.2,
+    padding: '2.5%',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
   bottomText: [globalStyle.nunitoFont3, {color: colors.BLUE}],

@@ -7,10 +7,12 @@ import {
   FONT_14,
   FONT_16,
   FONT_18,
+  FONT_20,
   FONT_24,
   LINE_HEIGHT_16,
   LINE_HEIGHT_20,
   LINE_HEIGHT_24,
+  LINE_HEIGHT_30,
   LINE_HEIGHT_36,
   NUNITO_BOLD,
   NUNITO_EXTRA_BOLD,
@@ -26,6 +28,11 @@ const globalStyle = StyleSheet.create({
     backgroundColor: colors.PRIMARY,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  logo: {
+    width: '100%',
+    height: verticalScale(36.86),
+    resizeMode: 'contain',
   },
   button: {
     width: scaleSize(335),
@@ -109,6 +116,12 @@ const globalStyle = StyleSheet.create({
     fontSize: FONT_18,
     textAlign: 'left',
     lineHeight: LINE_HEIGHT_24,
+  },
+  poppinsFont7: {
+    fontFamily: POPPINS_BOLD,
+    fontSize: FONT_20,
+    textAlign: 'left',
+    lineHeight: LINE_HEIGHT_30,
   },
   nunitoFont1: {
     fontFamily: NUNITO_EXTRA_BOLD,

@@ -50,6 +50,17 @@ const style = StyleSheet.create({
     borderColor: colors.GRAY_LIGHT,
   },
   appbarTitle: [globalStyle.poppinsFont2, {color: colors.BLACK, flex: 1}],
+  profile: {
+    width: verticalScale(33),
+    height: verticalScale(33),
+    borderRadius: verticalScale(33 / 2),
+  },
+  imgContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flex: 0.9,
+  },
   otpInputView: {
     flexDirection: 'row',
     justifyContent: 'center',

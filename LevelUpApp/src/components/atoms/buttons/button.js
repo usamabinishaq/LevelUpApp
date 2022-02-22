@@ -9,7 +9,10 @@ const Button = (props, navigation) => {
       style={[globalStyle.button, props.top ? {top: props.top} : null]}
       onPress={() =>
         props.action
-          ? RootNavigation.navigate(props.action)
+          ? RootNavigation.navigate(
+              props.action,
+              props.message ? {message: props.message} : null,
+            )
           : alert('Successful')
       }>
       <Text style={globalStyle.poppinsFont1}>{props.name}</Text>
