@@ -12,7 +12,7 @@ import {SelectedTabIcons, TabIcons} from '../../services/images';
 import style from './style';
 
 const Tab = createMaterialBottomTabNavigator();
-const tabs = [
+const tabItems = [
   {
     name: 'Home',
     comp: Home,
@@ -44,7 +44,7 @@ export default function BottomTabs() {
       initialRouteName="Home"
       labeled={false}
       barStyle={style.barStyle}>
-      {tabs.map((item, index) => {
+      {tabItems.map((item, index) => {
         return (
           <Tab.Screen
             key={index}
