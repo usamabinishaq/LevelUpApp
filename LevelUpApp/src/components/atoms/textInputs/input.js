@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Text, TextInput, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {colors} from '../../../styles/colors';
+import {FONT_14} from '../../../styles/typography';
 import style from '../style';
 const Input = (props, navigation) => {
   return (

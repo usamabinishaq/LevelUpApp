@@ -13,7 +13,7 @@ const style = StyleSheet.create({
     (globalStyle.poppinsFont4,
     {color: colors.lightDark, paddingLeft: 5, paddingBottom: '1%'}),
   inputView: {
-    height: scaleSize(46),
+    height: scaleSize(45),
     flexDirection: 'row',
     borderWidth: 1,
     borderRadius: scaleSize(12),
@@ -24,7 +24,13 @@ const style = StyleSheet.create({
     borderColor: colors.GRAY_LIGHT,
     justifyContent: 'space-between',
   },
-  input: [globalStyle.poppinsFont4, {flex: 0.9}],
+  input: [
+    globalStyle.poppinsFont4,
+    {
+      flex: 0.9,
+      height: '100%',
+    },
+  ],
   inputIcon: {flex: 0.1},
   socialIcon: {
     width: scaleSize(20),
@@ -77,6 +83,7 @@ const style = StyleSheet.create({
       color: colors.BLACK,
       borderColor: 'rgba(5, 36, 48,0.2)',
       margin: '1.25%',
+      fontSize: 14,
     },
   ],
 });

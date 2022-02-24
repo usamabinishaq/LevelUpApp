@@ -101,15 +101,15 @@ const globalStyle = StyleSheet.create({
   },
   poppinsFont3: {
     fontFamily: POPPINS_REGULAR,
-    fontSize: FONT_16,
+    fontSize: 12,
     textAlign: 'center',
     lineHeight: LINE_HEIGHT_24,
   },
   poppinsFont4: {
     fontFamily: POPPINS_MEDIUM,
-    fontSize: FONT_14,
+    fontSize: 14,
     textAlign: 'left',
-    lineHeight: LINE_HEIGHT_16,
+    lineHeight: 16,
   },
   poppinsFont6: {
     fontFamily: POPPINS_REGULAR,

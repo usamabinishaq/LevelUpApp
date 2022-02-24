@@ -79,7 +79,7 @@ const style = StyleSheet.create({
   },
   bottomText: [globalStyle.nunitoFont3, {color: colors.BLUE}],
   bottomText2: {color: colors.BLACK, fontFamily: NUNITO_BOLD},
-  signupBody: {flex: 0.95, padding: '5%'},
+  signupBody: {flex: 1, padding: '5%', paddingBottom: 0},
   signupContentView: {
     flex: 0.175,
     justifyContent: 'flex-start',
