@@ -16,6 +16,9 @@ import Home from './src/screens/bottomNavigation/bottomTabs/home/home';
 import Search from './src/screens/bottomNavigation/bottomTabs/search/search';
 import Chart from './src/screens/bottomNavigation/bottomTabs/chart/chart';
 import Message from './src/screens/bottomNavigation/bottomTabs/message/message';
+import SingleClass from './src/screens/pages/singleClass';
+import Massage from './src/screens/pages/massage';
+import Payment from './src/screens/pages/payment';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +38,9 @@ let screens = [
   {name: 'Search', comp: Search},
   {name: 'Chart', comp: Chart},
   {name: 'Message', comp: Message},
+  {name: 'SingleClass', comp: SingleClass},
+  {name: 'Massage', comp: Massage},
+  {name: 'Payment', comp: Payment},
 ];
 const App = () => {
   return (

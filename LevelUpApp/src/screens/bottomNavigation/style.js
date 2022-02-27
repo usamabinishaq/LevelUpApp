@@ -5,7 +5,7 @@ import {scaleSize, verticalScale} from '../../styles/mixins';
 const style = StyleSheet.create({
   barStyle: {
     backgroundColor: colors.WHITE,
-    height: scaleSize(72),
+    height: scaleSize(65),
     paddingHorizontal: '7.5%',
     justifyContent: 'center',
     elevation: 0,

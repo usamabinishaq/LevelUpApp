@@ -8,6 +8,7 @@ export const Images = {
   facebook: require('../assets/images/facebook.jpg'),
   running: require('../assets/images/running.png'),
   profile: require('../assets/images/6.jpg'),
+  trainer: require('../assets/images/3.jpg'),
 };
 
 export const TabIcons = {

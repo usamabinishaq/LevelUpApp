@@ -123,6 +123,24 @@ const globalStyle = StyleSheet.create({
     textAlign: 'left',
     lineHeight: LINE_HEIGHT_30,
   },
+  poppinsFont8: {
+    fontFamily: POPPINS_MEDIUM,
+    fontSize: 12,
+    textAlign: 'left',
+    lineHeight: 18,
+  },
+  poppinsBold12: {
+    fontFamily: POPPINS_BOLD,
+    fontSize: 12,
+  },
+  poppinsBold16: {
+    fontFamily: POPPINS_BOLD,
+    fontSize: 16,
+  },
+  poppinsRegular9: {
+    fontFamily: POPPINS_REGULAR,
+    fontSize: 9,
+  },
   nunitoFont1: {
     fontFamily: NUNITO_EXTRA_BOLD,
     fontSize: FONT_24,

@@ -9,6 +9,7 @@ export const colors = {
   BLUE: '#052430',
   LightBlue: '#092C4C',
   silverBlue: '#ABB3BB',
+  gray: '#222831',
 
   // ACTIONS
   SUCCESS: '#3adb76',
