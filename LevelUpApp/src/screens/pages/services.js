@@ -77,8 +77,9 @@ const Services = (props, navigation) => {
         <View style={style.button}>
           <Button
             name={'Continue'}
-            action={checked == 'spa' ? 'Massage' : 'BottomTabs'}
+            action={'BottomTabs'}
             message={'Selecting best workouts for you…'}
+            params={checked}
           />
         </View>
       </View>

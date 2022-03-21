@@ -15,10 +15,12 @@ import BottomTabs from './src/screens/bottomNavigation/bottomNavigation';
 import Home from './src/screens/bottomNavigation/bottomTabs/home/home';
 import Search from './src/screens/bottomNavigation/bottomTabs/search/search';
 import Chart from './src/screens/bottomNavigation/bottomTabs/chart/chart';
-import Message from './src/screens/bottomNavigation/bottomTabs/message/message';
 import SingleClass from './src/screens/pages/singleClass';
-import Massage from './src/screens/pages/massage';
 import Payment from './src/screens/pages/payment';
+import Trainers from './src/screens/pages/trainers';
+import AllClasses from './src/screens/pages/allClasses';
+import SpaDetail from './src/screens/pages/spaDetail';
+import Profile from './src/screens/pages/profile/profile';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,10 +39,12 @@ let screens = [
   {name: 'Home', comp: Home},
   {name: 'Search', comp: Search},
   {name: 'Chart', comp: Chart},
-  {name: 'Message', comp: Message},
+  {name: 'SpaDetail', comp: SpaDetail},
   {name: 'SingleClass', comp: SingleClass},
-  {name: 'Massage', comp: Massage},
   {name: 'Payment', comp: Payment},
+  {name: 'Trainers', comp: Trainers},
+  {name: 'AllClasses', comp: AllClasses},
+  {name: 'Profile', comp: Profile},
 ];
 const App = () => {
   return (

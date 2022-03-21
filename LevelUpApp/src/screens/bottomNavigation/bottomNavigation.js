@@ -38,7 +38,8 @@ const tabItems = [
     selectedIcon: SelectedTabIcons.message,
   },
 ];
-export default function BottomTabs() {
+export default function BottomTabs({route}) {
+  let service = route.params ? route.params.service : '';
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -50,6 +51,7 @@ export default function BottomTabs() {
             key={index}
             name={item.name}
             component={item.comp}
+            initialParams={item.name == 'Home' ? {service: service} : ''}
             options={{
               tabBarIcon: ({focused}) => (
                 <View style={[style.tab, focused ? style.selectedTab : null]}>

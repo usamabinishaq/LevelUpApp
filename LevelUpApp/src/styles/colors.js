@@ -10,6 +10,9 @@ export const colors = {
   LightBlue: '#092C4C',
   silverBlue: '#ABB3BB',
   gray: '#222831',
+  tabColor: '#77838F',
+  calendarBackground: '#FAF7F4',
+  purple: '#40054F',
 
   // ACTIONS
   SUCCESS: '#3adb76',

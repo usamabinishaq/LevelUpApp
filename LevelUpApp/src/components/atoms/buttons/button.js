@@ -11,7 +11,9 @@ const Button = (props, navigation) => {
         props.action
           ? RootNavigation.navigate(
               props.action,
-              props.message ? {message: props.message} : null,
+              props.message
+                ? {message: props.message, service: props.params}
+                : null,
             )
           : alert('Successful')
       }>

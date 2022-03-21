@@ -9,7 +9,7 @@ const ClassesView = props => {
     <TouchableOpacity
       style={style.main}
       onPress={() => {
-        RootNavigation.navigate('SingleClass');
+        RootNavigation.navigate('SingleClass', {data: props.class});
       }}>
       <ImageBackground
         source={props.class.img}

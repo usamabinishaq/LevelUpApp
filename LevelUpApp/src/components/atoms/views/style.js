@@ -4,18 +4,17 @@ import globalStyle from '../../../styles/globalStyle';
 import {scaleFont, scaleSize, verticalScale} from '../../../styles/mixins';
 
 const style = StyleSheet.create({
+  //Classes
   main: {
+    alignSelf: 'flex-start',
     backgroundColor: colors.gray,
     width: scaleSize(180),
-    height: '93%',
     borderRadius: scaleSize(12),
-    marginLeft: '2.5%',
-    marginRight: '2.5%',
+    marginHorizontal: 7.5,
   },
   backgroundImage: {
     width: '100%',
     height: '100%',
-
     justifyContent: 'flex-end',
   },
   imageStyle: {borderRadius: scaleSize(12), opacity: 0.5},
@@ -54,6 +53,39 @@ const style = StyleSheet.create({
       paddingLeft: 10,
       paddingRight: 10,
       color: colors.WHITE,
+    },
+  ],
+
+  //Trainers
+  trainerView: {
+    width: scaleSize(180),
+    alignSelf: 'flex-start',
+    borderRadius: scaleSize(12),
+    marginHorizontal: 7.5,
+    paddingBottom: 5,
+  },
+  trainerImage: {
+    height: '75%',
+    width: '100%',
+    borderRadius: scaleSize(12),
+    resizeMode: 'cover',
+  },
+  trainerTitle: [
+    globalStyle.poppinsBold12,
+    {
+      lineHeight: 18,
+      color: colors.PRIMARY,
+      paddingBottom: '1%',
+      padding: '2.5%',
+    },
+  ],
+  trainerCategory: [
+    globalStyle.poppinsRegular9,
+    {
+      lineHeight: 14,
+      color: colors.BLACK,
+      opacity: 0.7,
+      paddingLeft: '2.5%',
     },
   ],
 });

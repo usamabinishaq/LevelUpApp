@@ -6,6 +6,7 @@ const WINDOW_HEIGHT = Dimensions.get('window').height;
 const guidelineBaseWidth = 375;
 const guidelineBaseHeight = 680;
 
+export const window = {width: WINDOW_WIDTH, height: WINDOW_HEIGHT};
 export const scaleSize = size => (WINDOW_WIDTH / guidelineBaseWidth) * size;
 export const verticalScale = size =>
   (WINDOW_HEIGHT / guidelineBaseHeight) * size;

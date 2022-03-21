@@ -23,3 +23,16 @@ export const SelectedTabIcons = {
   chart: require('../assets/images/chart_white.png'),
   message: require('../assets/images/message_white.png'),
 };
+
+export const spa_CategoriesIcons = {
+  saloon: require('../assets/images/icons/saloon.png'),
+  massage: require('../assets/images/icons/massage.png'),
+  pedicure: require('../assets/images/icons/pedicure.png'),
+  bath: require('../assets/images/icons/bath.png'),
+};
+export const selected_spa_CategoriesIcons = {
+  saloon_selected: require('../assets/images/icons/saloon_selected.png'),
+  massage_selected: require('../assets/images/icons/massage_selected.png'),
+  pedicure_selected: require('../assets/images/icons/pedicure_selected.png'),
+  bath_selected: require('../assets/images/icons/bath_selected.png'),
+};

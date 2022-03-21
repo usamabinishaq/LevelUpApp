@@ -9,6 +9,7 @@ const style = StyleSheet.create({
     borderRadius: scaleSize(16),
     justifyContent: 'center',
     alignItems: 'center',
+    marginLeft: 10,
   },
   selectedText: [
     globalStyle.poppinsFont3,
@@ -24,8 +25,8 @@ const style = StyleSheet.create({
     globalStyle.poppinsFont8,
     {
       color: colors.gray,
-      paddingLeft: 10,
-      paddingRight: 10,
+      paddingLeft: 5,
+      paddingRight: 5,
     },
   ],
   selectedTab: {backgroundColor: colors.PRIMARY},

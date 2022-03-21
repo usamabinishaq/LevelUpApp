@@ -1,14 +1,15 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../styles/colors';
-import {scaleSize, verticalScale} from '../../styles/mixins';
+import {scaleSize, verticalScale, window} from '../../styles/mixins';
 
 const style = StyleSheet.create({
   barStyle: {
-    backgroundColor: colors.WHITE,
-    height: scaleSize(65),
+    width: window.width,
+    height: verticalScale(75),
     paddingHorizontal: '7.5%',
     justifyContent: 'center',
     elevation: 0,
+    backgroundColor: colors.WHITE,
   },
   tab: {
     width: verticalScale(38),
@@ -16,7 +17,6 @@ const style = StyleSheet.create({
     borderRadius: verticalScale(8.5),
     justifyContent: 'center',
     alignItems: 'center',
-    bottom: 5,
   },
   selectedTab: {backgroundColor: colors.PRIMARY},
   icon: {

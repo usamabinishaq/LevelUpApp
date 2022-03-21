@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {
   FlatList,
   Image,
@@ -7,153 +7,218 @@ import {
   Text,
   TouchableOpacity,
   View,
+  ImageBackground,
+  Animated,
 } from 'react-native';
 import Appbar from '../../../../components/appbar/appbar';
 import RoundedTabItem from '../../../../components/atoms/tabButtons/RoundedTabItem';
 import ClassesView from '../../../../components/atoms/views/classesView';
-import {classes, workouts} from '../../../../services/dummy';
-import {Images} from '../../../../services/images';
+import {TrainerView} from '../../../../components/atoms/views/trainerView';
+import {
+  classes,
+  spaList,
+  spa_categories,
+  trainers,
+  workouts,
+} from '../../../../services/dummy';
 import {colors} from '../../../../styles/colors';
-import globalStyle from '../../../../styles/globalStyle';
-import {scaleSize} from '../../../../styles/mixins';
-import {FONT_20, FONT_22, FONT_24} from '../../../../styles/typography';
+import {scaleFont, scaleSize, verticalScale} from '../../../../styles/mixins';
+import {
+  LINE_HEIGHT_16,
+  NUNITO_REGULAR,
+  NUNITO_SEMI_BOLD,
+  POPPINS_BOLD,
+  POPPINS_MEDIUM,
+  POPPINS_REGULAR,
+} from '../../../../styles/typography';
 import style from './style';
-const Home = (props, navigation) => {
-  const [selectedWorkout, setSelectedWorkout] = useState(false);
+const Home = ({route, navigation}) => {
+  const [workout, setWorkouts] = useState(workouts);
+  const [selected, setSelected] = useState(0);
+  const [selectedSpa, setSelectedSpa] = useState(0);
+  // const ScrollX = useRef(new Animated.Value(0)).current;
+
+  const setSelectedTab = val => {
+    setSelected(val.pos);
+  };
+  const setSpaCategory = val => {
+    setSelectedSpa(val);
+  };
+  const renderSpaList = (item, index) => {
+    // const inputRange = [
+    //   (index - 2) * scaleSize(190),
+    //   (index - 1) * scaleSize(190),
+    //   index * scaleSize(190),
+    // ];
+    // const translateY = ScrollX.interpolate({
+    //   inputRange,
+    //   outputRange: [0, -25, 0],
+    // });
+    return (
+      <View style={style.spaListContainer}>
+        <ImageBackground
+          key={index}
+          source={item.img}
+          style={style.spaListImage}
+          imageStyle={{opacity: 1, borderRadius: verticalScale(12)}}>
+          <Text style={style.spaListName}>{item.name}</Text>
+          <TouchableOpacity
+            style={style.spaListInformationBtn}
+            onPress={() => {
+              navigation.navigate('SpaDetail', {spa: item});
+            }}>
+            <Text style={style.spaListInformationTitle}>{`Information`}</Text>
+          </TouchableOpacity>
+        </ImageBackground>
+      </View>
+    );
+  };
   return (
     <SafeAreaView style={style.main}>
       {/* {APPBAR} */}
-      <Appbar name={'home'} />
+      <Appbar name={'home'} left={'ios-menu'} />
+      {route.params.service == 'gym' ? (
+        /*{GYM } */
+        <View style={style.mainScroll}>
+          {/* {WORKOUTS TABS} */}
 
-      <View style={{flex: 0.9}}>
-        {/* {WORKOUTS TABS} */}
-
-        <View style={style.workouts}>
-          <Text style={style.topTitle}>Workouts</Text>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            {workouts.map((item, index) => {
-              return <RoundedTabItem tab={item} key={index} />;
-            })}
-          </ScrollView>
-        </View>
-
-        {/* {CLASSES} */}
-
-        <View style={style.classesView}>
-          <View style={style.classHeader}>
-            <Text style={style.simpleTitle}>Our Classes</Text>
-            <Text style={style.seeAllTxt}>See All</Text>
+          <View style={style.workouts}>
+            <Text style={style.topTitle}>Workouts</Text>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}>
+              {workout.map((item, index) => {
+                return (
+                  <RoundedTabItem
+                    data={{tab: item, position: selected, index: index}}
+                    key={index}
+                    callback={setSelectedTab}
+                  />
+                );
+              })}
+            </ScrollView>
           </View>
-          {/* <FlatList
-            data={classes}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={({item, index}) => {
-              return <ClassesView class={item} key={index} />;
-            }}
-          /> */}
-          <View style={{flexDirection: 'row'}}>
-            <ClassesView class={classes[0]} />
-            <ClassesView class={classes[1]} />
-          </View>
-        </View>
-        <View style={style.trainersView}>
-          <View style={style.classHeader}>
-            <Text style={style.simpleTitle}>Our Trainers</Text>
-            <Text style={style.seeAllTxt}>See All</Text>
-          </View>
-          <View style={{flexDirection: 'row'}}>
-            <View
-              style={{
-                width: scaleSize(180),
-                alignSelf: 'flex-start',
-                borderRadius: scaleSize(12),
-                marginLeft: '2.5%',
-                marginRight: '2.5%',
-              }}>
-              <Image
-                source={Images.trainer}
-                style={{
-                  height: '65%',
-                  width: '100%',
-                  borderRadius: scaleSize(12),
-                  resizeMode: 'cover',
+
+          {/* {CLASSES} */}
+
+          <View style={style.classesView}>
+            <View style={style.classHeader}>
+              <Text style={style.simpleTitle}>Our Classes</Text>
+              <Text
+                onPress={() => {
+                  navigation.navigate('AllClasses');
                 }}
-              />
-              <Text
-                style={[
-                  globalStyle.poppinsBold12,
-                  {
-                    lineHeight: 18,
-                    color: colors.PRIMARY,
-                    paddingBottom: '1%',
-                    paddingTop: '2.5%',
-                    padding: '2.5%',
-                  },
-                ]}>
-                Coach Gazalla
-              </Text>
-              <Text
-                style={[
-                  globalStyle.poppinsRegular9,
-                  {
-                    lineHeight: 14,
-                    color: colors.BLACK,
-                    opacity: 0.7,
-                    paddingLeft: '2.5%',
-                  },
-                ]}>
-                Swimming Specialist
+                style={style.seeAllTxt}>
+                See All
               </Text>
             </View>
-            <View
-              style={{
-                width: scaleSize(180),
-                alignSelf: 'flex-start',
-                borderRadius: scaleSize(12),
-                marginLeft: '2.5%',
-                marginRight: '2.5%',
-              }}>
-              <Image
-                source={Images.trainer}
-                style={{
-                  height: '65%',
-                  width: '100%',
-                  borderRadius: scaleSize(12),
-                  resizeMode: 'cover',
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}>
+              {classes.map((item, index) => {
+                return <ClassesView class={item} key={index} />;
+              })}
+            </ScrollView>
+          </View>
+          <View style={style.trainersView}>
+            <View style={style.classHeader}>
+              <Text style={style.simpleTitle}>Our Trainers</Text>
+              <Text
+                onPress={() => {
+                  navigation.navigate('Trainers');
                 }}
-              />
-              <Text
-                style={[
-                  globalStyle.poppinsBold12,
-                  {
-                    lineHeight: 18,
-                    color: colors.PRIMARY,
-                    paddingBottom: '1%',
-                    paddingTop: '2.5%',
-                    padding: '2.5%',
-                  },
-                ]}>
-                Coach Gazalla
-              </Text>
-              <Text
-                style={[
-                  globalStyle.poppinsRegular9,
-                  {
-                    lineHeight: 14,
-                    color: colors.BLACK,
-                    opacity: 0.7,
-                    paddingLeft: '2.5%',
-                  },
-                ]}>
-                Swimming Specialist
+                style={style.seeAllTxt}>
+                See All
               </Text>
             </View>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}>
+              {trainers.map((item, index) => {
+                return <TrainerView trainer={item} key={index} />;
+              })}
+            </ScrollView>
           </View>
         </View>
-      </View>
+      ) : (
+        /*{ SPA} */
+        <View style={style.mainScroll}>
+          <View style={{flex: 0.6, paddingVertical: '2.5%'}}>
+            <Text style={style.topTitle}>Featured</Text>
+            <View style={{flex: 1}}>
+              <FlatList
+                horizontal={true}
+                data={spaList}
+                showsHorizontalScrollIndicator={false}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({item, index}) => renderSpaList(item, index)}
+                snapToInterval={scaleSize(115)}
+                decelerationRate={0}
+                bounces={false}
+                scrollEventThrottle={1}
+              />
+            </View>
+          </View>
+          <View style={{flex: 0.4, paddingVertical: '2.5%'}}>
+            <Text style={style.topTitle}>Categories</Text>
+            <ScrollView showsVerticalScrollIndicator={false}>
+              <View
+                style={{
+                  flexWrap: 'wrap',
+                  flexDirection: 'row',
+                }}>
+                {spa_categories.map((item, index) => (
+                  <SpaCategory
+                    key={index}
+                    data={{item: item, position: selectedSpa, index: index}}
+                    callback={setSpaCategory}
+                  />
+                ))}
+              </View>
+            </ScrollView>
+          </View>
+        </View>
+      )}
     </SafeAreaView>
   );
 };
 export default Home;
+
+export const SpaCategory = props => {
+  return (
+    <TouchableOpacity
+      style={[
+        style.spaCategoryContainer,
+        {
+          backgroundColor:
+            props.data.position == props.data.index
+              ? colors.PRIMARY
+              : colors.WHITE,
+        },
+      ]}
+      onPress={() => {
+        props.callback(props.data.index);
+      }}>
+      <Image
+        source={
+          props.data.position == props.data.index
+            ? props.data.item.selectedIcon
+            : props.data.item.icon
+        }
+        style={style.spaCategoryImage}
+      />
+      <Text
+        style={[
+          style.spaCategoryTitle,
+          {
+            color:
+              props.data.position == props.data.index
+                ? colors.WHITE
+                : colors.tabColor,
+          },
+        ]}>
+        {props.data.item.category}
+      </Text>
+    </TouchableOpacity>
+  );
+};
