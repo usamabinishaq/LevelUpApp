@@ -13,10 +13,12 @@ export const colors = {
   tabColor: '#77838F',
   calendarBackground: '#FAF7F4',
   purple: '#40054F',
+  RATING: '#FBB03B',
 
   // ACTIONS
   SUCCESS: '#3adb76',
   WARNING: '#ffae00',
+
   ALERT: '#cc4b37',
 
   // GRAYSCALE
