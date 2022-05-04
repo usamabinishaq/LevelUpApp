@@ -7,17 +7,16 @@ import {
   Text,
   View,
 } from 'react-native';
-import Button from '../../components/atoms/buttons/button';
 import {Images} from '../../services/images';
-import {colors} from '../../styles/colors';
-import globalStyle from '../../styles/globalStyle';
-import {scaleSize} from '../../styles/mixins';
+
 import style from './style';
 
 const Progress = ({navigation, route}) => {
   setTimeCall = () => {
     setTimeout(() => {
-      navigation.replace('OTP');
+      navigation.replace(route.params.action, {
+        service: route.params.param ? route.params.param : null,
+      });
     }, 2000);
   };
   useEffect(() => {

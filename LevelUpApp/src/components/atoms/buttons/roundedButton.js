@@ -7,11 +7,7 @@ const RoundedButton = (props, navigation) => {
   return (
     <TouchableOpacity
       style={[globalStyle.roundedButton, props.top ? {top: props.top} : null]}
-      onPress={() =>
-        props.action
-          ? RootNavigation.navigate(props.action)
-          : alert('Successful')
-      }>
+      onPress={props.onPress}>
       <Text style={globalStyle.poppinsFont1}>{props.name}</Text>
     </TouchableOpacity>
   );

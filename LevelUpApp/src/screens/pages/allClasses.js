@@ -13,6 +13,8 @@ import {
 import Appbar from '../../components/appbar/appbar';
 import RoundedTabItem from '../../components/atoms/tabButtons/RoundedTabItem';
 import LiveView from '../../components/atoms/views/liveView';
+import * as RootNavigation from '../../navigations/RootNavigation';
+
 import {
   classCategory,
   classes,

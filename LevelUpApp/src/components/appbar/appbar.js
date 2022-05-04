@@ -17,7 +17,7 @@ const Appbar = (props, navigation) => {
         barStyle="dark-content"
       />
       {props.left ? (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={props.onPress}>
           <Icon name={props.left} size={25} color={colors.PRIMARY} />
         </TouchableOpacity>
       ) : (

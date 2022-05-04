@@ -84,6 +84,53 @@ export const trainers = [
     ],
   },
 ];
+export const trainer = [
+  {
+    title: 'Coach Gazalla',
+    category: 'Swimming',
+    img: require('../assets/images/img1.png'),
+    rating: 3,
+    age: 24,
+    height: 178,
+    description: `Dedicated fitness professional with a passion for improving client health, wellness and quality of life. Deliver high-energy training using the latest techniques in exercise science, cardio programs and strength training.`,
+    specialised: [
+      'Weight Loss',
+      'Muscle Gain',
+      'Corrective Exercise',
+      'Pain Control',
+    ],
+  },
+  {
+    title: 'Coach Deema',
+    category: 'Body',
+    img: require('../assets/images/img2.png'),
+    rating: 5,
+    age: 24,
+    height: 150,
+    description: `Dedicated fitness professional with a passion for improving client health, wellness and quality of life. Deliver high-energy training using the latest techniques in exercise science, cardio programs and strength training.`,
+    specialised: [
+      'Corrective Exercise',
+      'Pain Control',
+      'Weight Loss',
+      'Muscle Gain',
+    ],
+  },
+  {
+    title: 'Coach Anna',
+    category: 'Core',
+    img: require('../assets/images/img3.png'),
+    rating: 4,
+    age: 32,
+    height: 180,
+    description: `Dedicated fitness professional with a passion for improving client health, wellness and quality of life. Deliver high-energy training using the latest techniques in exercise science, cardio programs and strength training.`,
+    specialised: [
+      'Corrective Exercise',
+      'Pain Control',
+      'Weight Loss',
+      'Muscle Gain',
+    ],
+  },
+];
 export const trainersCategory = [
   {title: 'Show All Coaches'},
   {title: 'Swimming'},

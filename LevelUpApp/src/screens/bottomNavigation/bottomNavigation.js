@@ -10,12 +10,13 @@ import Message from './bottomTabs/message/message';
 import {Image, View} from 'react-native';
 import {SelectedTabIcons, TabIcons} from '../../services/images';
 import style from './style';
+import HomeStackNavigator from '../../navigations/stack/HomeNavigator';
 
 const Tab = createMaterialBottomTabNavigator();
 const tabItems = [
   {
-    name: 'Home',
-    comp: Home,
+    name: 'HomeStackNavigator',
+    comp: HomeStackNavigator,
     icon: TabIcons.home,
     selectedIcon: SelectedTabIcons.home,
   },
@@ -40,9 +41,10 @@ const tabItems = [
 ];
 export default function BottomTabs({route}) {
   let service = route.params ? route.params.service : '';
+  console.log('BottomTabs: ' + service);
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="HomeStackNavigator"
       labeled={false}
       barStyle={style.barStyle}>
       {tabItems.map((item, index) => {
@@ -51,7 +53,9 @@ export default function BottomTabs({route}) {
             key={index}
             name={item.name}
             component={item.comp}
-            initialParams={item.name == 'Home' ? {service: service} : ''}
+            initialParams={
+              item.name == 'HomeStackNavigator' ? {service: service} : ''
+            }
             options={{
               tabBarIcon: ({focused}) => (
                 <View style={[style.tab, focused ? style.selectedTab : null]}>

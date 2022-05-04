@@ -13,7 +13,7 @@ import Modal from 'react-native-modal';
 import Appbar from '../../components/appbar/appbar';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import RoundedTabItem from '../../components/atoms/tabButtons/RoundedTabItem';
-import {trainers, trainersCategory} from '../../services/dummy';
+import {trainers, trainer, trainersCategory} from '../../services/dummy';
 import {colors} from '../../styles/colors';
 import {scaleFont, verticalScale, window} from '../../styles/mixins';
 
@@ -33,9 +33,9 @@ export default function Trainers(props, navigation) {
     position: 0,
     category: categories[0].title,
   });
-  const [getTrainers, setTrainers] = useState(trainers);
+  const [getTrainers, setTrainers] = useState(trainer);
   const [modal, setModal] = useState(false);
-  const [singleTrainer, setSingleTrainer] = useState(trainers[0]);
+  const [singleTrainer, setSingleTrainer] = useState(trainer[0]);
 
   const setSelectedTab = val => {
     setSelected({position: val.pos, category: val.cat});
@@ -50,16 +50,18 @@ export default function Trainers(props, navigation) {
 
   const renderTrainers = item => {
     return (
-      <TouchableOpacity
-        style={style.trainersListView}
-        activeOpacity={0.9}
-        onPress={() => {
-          setSingleTrainer(item);
-          setModal(true);
-        }}>
-        <Image source={item.img} style={style.trainersListImage} />
+      <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <TouchableOpacity
+          style={style.trainersListView}
+          activeOpacity={0.9}
+          onPress={() => {
+            setSingleTrainer(item);
+            setModal(true);
+          }}>
+          <Image source={item.img} style={style.trainersListImage} />
+        </TouchableOpacity>
         <Text style={style.trainersListTitle}>{item.title}</Text>
-      </TouchableOpacity>
+      </View>
     );
   };
   const renderModal = item => {
@@ -98,18 +100,27 @@ export default function Trainers(props, navigation) {
                 flex: 0.5,
                 justifyContent: 'center',
                 alignItems: 'center',
+                alignSelf: 'center',
               }}>
-              <Image
-                source={item.img}
+              <View
                 style={{
-                  width: '70%',
-                  height: '65%',
-                  resizeMode: 'cover',
                   borderRadius: verticalScale(12),
                   borderWidth: 2.5,
                   borderColor: colors.WHITE,
-                }}
-              />
+                  width: '75%',
+                  height: '65%',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <Image
+                  source={item.img}
+                  style={{
+                    width: '100%',
+                    height: '90%',
+                    resizeMode: 'contain',
+                  }}
+                />
+              </View>
             </View>
 
             <View

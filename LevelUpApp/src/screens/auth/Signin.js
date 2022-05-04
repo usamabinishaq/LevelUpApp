@@ -51,7 +51,12 @@ const Signin = ({navigation}) => {
         </View>
       </View>
       <View style={style.socialButtonsView}>
-        <Button name={'Sign In'} />
+        <Button
+          name={'Sign In'}
+          onPress={() => {
+            navigation.replace('Services');
+          }}
+        />
         <Text style={style.bottomText}>
           Don’t Have an Account?{' '}
           <Text

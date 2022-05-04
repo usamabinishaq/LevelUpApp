@@ -19,7 +19,6 @@ const OnBoarding = ({navigation}) => {
   useFocusEffect(() => {
     // This will run when component is `focused` or mounted.
     StatusBar.setHidden(true);
-
     // This will run when component is `blured` or unmounted.
   });
   return (
@@ -36,7 +35,13 @@ const OnBoarding = ({navigation}) => {
             style={
               styles.text
             }>{`Find what workout you need and get personal trainer for you`}</Text>
-          <Button name={'Get Started'} action={'Signup'} top={'10%'} />
+          <Button
+            name={'Get Started'}
+            onPress={() => {
+              navigation.navigate('Signup');
+            }}
+            top={'10%'}
+          />
           <Text
             style={[
               globalStyle.poppinsFont2,

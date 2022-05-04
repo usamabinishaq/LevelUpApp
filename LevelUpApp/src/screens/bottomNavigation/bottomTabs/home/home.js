@@ -33,6 +33,7 @@ import {
 } from '../../../../styles/typography';
 import style from './style';
 const Home = ({route, navigation}) => {
+  console.log(route);
   const [workout, setWorkouts] = useState(workouts);
   const [selected, setSelected] = useState(0);
   const [selectedSpa, setSelectedSpa] = useState(0);
@@ -76,7 +77,13 @@ const Home = ({route, navigation}) => {
   return (
     <SafeAreaView style={style.main}>
       {/* {APPBAR} */}
-      <Appbar name={'home'} left={'ios-menu'} />
+      <Appbar
+        name={'home'}
+        left={'ios-menu'}
+        onPress={() => {
+          navigation.openDrawer();
+        }}
+      />
       {route.params.service == 'gym' ? (
         /*{GYM } */
         <View style={style.mainScroll}>
@@ -152,7 +159,7 @@ const Home = ({route, navigation}) => {
                 showsHorizontalScrollIndicator={false}
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({item, index}) => renderSpaList(item, index)}
-                snapToInterval={scaleSize(115)}
+                snapToInterval={scaleSize(175 / 2)}
                 decelerationRate={0}
                 bounces={false}
                 scrollEventThrottle={1}

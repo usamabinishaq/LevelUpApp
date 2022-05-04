@@ -40,8 +40,12 @@ const Signup = ({navigation}) => {
           </Text>
           <Button
             name={'Create Account'}
-            action={'Progress'}
-            message={'Sending Request...'}
+            onPress={() => {
+              navigation.navigate('Progress', {
+                action: 'OTP',
+                message: 'Sending Request...',
+              });
+            }}
           />
           {/* <Text style={style.bottomText}>
             Already Have an Account?{' '}

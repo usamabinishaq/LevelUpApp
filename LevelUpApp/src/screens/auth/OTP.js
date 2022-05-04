@@ -8,7 +8,7 @@ import OtpInput from '../../components/atoms/textInputs/otpInput';
 import {colors} from '../../styles/colors';
 import style from './style';
 
-const OTP = (props, navigation) => {
+const OTP = ({navigation}) => {
   return (
     <View style={style.main}>
       <StatusBar
@@ -31,7 +31,13 @@ const OTP = (props, navigation) => {
           <View style={style.otpIsCorrect}>
             <Icon name={'check-bold'} color={colors.BLUE} size={20} />
           </View>
-          <RoundedButton name={'Verify'} top={'15%'} action={'Services'} />
+          <RoundedButton
+            name={'Verify'}
+            top={'15%'}
+            onPress={() => {
+              navigation.replace('Services');
+            }}
+          />
         </View>
       </View>
     </View>

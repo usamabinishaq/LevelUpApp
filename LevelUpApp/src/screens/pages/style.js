@@ -46,18 +46,20 @@ const style = StyleSheet.create({
   },
   trainersListImage: {
     width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
-    borderRadius: verticalScale(12),
-    borderWidth: 3.5,
-    borderColor: colors.PRIMARY,
+    height: '90%',
+    resizeMode: 'contain',
   },
   trainersListView: {
     width: scaleSize(150),
     height: verticalScale(150),
-    margin: '5%',
+    margin: '2.5%',
+
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius: verticalScale(12),
+    borderWidth: 3.5,
+
+    borderColor: colors.PRIMARY,
   },
   trainersListTitle: {
     fontFamily: POPPINS_MEDIUM,

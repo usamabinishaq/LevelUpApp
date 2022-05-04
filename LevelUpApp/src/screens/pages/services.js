@@ -7,7 +7,7 @@ import {colors} from '../../styles/colors';
 import globalStyle from '../../styles/globalStyle';
 import style from './style';
 
-const Services = (props, navigation) => {
+const Services = ({navigation}) => {
   const [checked, setChecked] = useState('gym');
   return (
     <View style={style.main}>
@@ -77,9 +77,13 @@ const Services = (props, navigation) => {
         <View style={style.button}>
           <Button
             name={'Continue'}
-            action={'BottomTabs'}
-            message={'Selecting best workouts for you…'}
-            params={checked}
+            onPress={() => {
+              navigation.navigate('Progress', {
+                action: 'Drawer',
+                message: 'Selecting best workouts for you…',
+                param: checked,
+              });
+            }}
           />
         </View>
       </View>
